@@ -1,0 +1,624 @@
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+    --cor-fundo-header: #f5f5dc;
+    --cor-fundo-site: #000;
+    --cor-botao: #f5f5dc;
+    --cor-texto: #deb48c;
+
+    --cor-marrom: #4a2c2a;
+    --cor-marrom-claro: #6a3c38;
+    --cor-cafe: #a0522d;
+
+    --cor-branco: #fff;
+    --cor-cinza: #555;
+
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    --radius: 12px;
+
+    --transition: 0.3s ease;
+
+    --container: 1200px;
+}
+
+/* =========================
+   BASE
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-branco);
+
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+section {
+    scroll-margin-top: 140px;
+}
+
+/* Container padrão */
+
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 12px 20px;
+
+    background-color: var(--cor-fundo-header);
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-jpg {
+    width: clamp(90px, 15vw, 140px);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(13px, 2vw, 18px);
+    font-weight: bold;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+}
+
+nav a:hover {
+    color: rgb(180, 120, 90);
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.home-container {
+    background-image: url("../img/fundo-do-site.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+
+    min-height: calc(100vh - 120px);
+}
+
+.content {
+    width: 100%;
+    max-width: 60rem;
+
+    padding: clamp(20px, 5vw, 100px);
+}
+
+.content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.content h1 span {
+    display: block;
+}
+
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    padding-left: 10px;
+}
+
+.content h2 span {
+    display: block;
+    font-weight: 200;
+    line-height: 1.8;
+}
+
+.content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+.botao {
+    display: inline-block;
+
+    padding: 1em 2em;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    background-color: var(--cor-botao);
+
+    color: #666;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    transition:
+        transform var(--transition),
+        background-color var(--transition);
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+.inicio-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    min-height: 100vh;
+
+    padding: 80px 20px;
+
+    background-color: var(--cor-cafe);
+}
+
+.img-ambiente {
+    width: 100%;
+    max-width: 520px;
+}
+
+.texto-cafeteria {
+    width: 100%;
+    max-width: 650px;
+}
+
+.texto-cafeteria h2 {
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.texto-cafeteria p {
+    line-height: 1.8;
+    font-size: 1.2rem;
+}
+
+/* =========================
+   CARDÁPIO
+========================= */
+
+#cardapio {
+    padding: 80px 20px;
+
+    background-color: #fdfdfd;
+
+    text-align: center;
+}
+
+#cardapio h2 {
+    color: var(--cor-marrom);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#cardapio p {
+    color: var(--cor-marrom);
+
+    line-height: 1.8;
+}
+
+.cardapio-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+}
+
+.cardapio-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px;
+
+    background-color: var(--cor-branco);
+
+    color: #333;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-card);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.cardapio-img {
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+.cardapio-card h3 {
+    color: #3b1f1d;
+
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+}
+
+.cardapio-card p {
+    color: #666;
+}
+
+.cardapio-info h4 {
+    margin-top: 20px;
+
+    font-size: 1.2rem;
+
+    color: #000;
+}
+
+@media (hover: hover) {
+
+    .cardapio-card:hover {
+        transform: translateY(-8px);
+
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+#contato {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background-color: #fdfdfd;
+}
+
+#contato h2,
+#contato h3,
+#contato h4,
+#contato h5 {
+    color: var(--cor-marrom);
+    font-family: 'Playfair Display', serif;
+}
+
+#contato h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: clamp(1.8rem, 4vw, 2rem);
+}
+
+#contato h3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: clamp(1.8rem, 4vw, 2rem);
+}
+
+#contato h4 {
+    margin: 40px 0 20px;
+}
+
+#contato h5 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+#contato address {
+    display: inline-block;
+    color: #000;
+    font-style: normal;
+    line-height: 1.6;
+}
+#contato ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+#contato li,
+#contato p {
+    color: var(--cor-cinza);
+}
+
+#contato .botao-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin-top: 10px;
+    padding: 12px 18px;
+
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+
+    color: var(--cor-branco);
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    word-break: break-word;
+
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+#contato .botao-whatsapp:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+
+    background: linear-gradient(135deg, #2ee06d, #1ebe5d);
+}
+
+#contato .botao-whatsapp:active {
+    transform: scale(0.96);
+}
+
+#contato .botao-redes-sociais {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 12px;
+
+    padding: 12px 18px;
+
+    background-color: var(--cor-marrom-claro);
+
+    color: var(--cor-branco);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Efeito hover */
+#contato .botao-redes-sociais:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Instagram */
+#contato .botao-redes-sociais:nth-of-type(2):hover {
+    background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af,
+        #515bd4
+    );
+}
+
+/* Facebook */
+#contato .botao-redes-sociais:nth-of-type(3):hover {
+    background-color: #1877f2;
+}
+
+/* TikTok */
+#contato .botao-redes-sociais:nth-of-type(4):hover {
+    background-color: #000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: var(--cor-marrom);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+footer i {
+    cursor: pointer;
+
+    font-size: 1.4rem;
+    padding: 5px 5px;
+    transition: color var(--transition);
+}
+
+footer i:hover {
+    color: #f0c674;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 4px;
+    }
+
+    .content {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .inicio-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .texto-cafeteria {
+        text-align: center;
+    }
+
+    .cardapio-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    nav a {
+        font-size: 12px;
+
+        padding: 6px 8px;
+    }
+
+    .content h2 {
+        font-size: 1.6rem;
+    }
+
+    .cardapio-card {
+        padding: 15px;
+    }
+
+    #contato a {
+        width: 100%;
+    }
+
+}
