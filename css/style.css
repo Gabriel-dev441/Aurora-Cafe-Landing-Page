@@ -105,7 +105,7 @@ header {
 }
 
 .logo-jpg {
-    width: clamp(90px, 15vw, 240px);
+    width: clamp(90px, 15vw, 140px);
 }
 
 nav {
@@ -569,7 +569,7 @@ footer i:hover {
     header {
         padding: 10px;
     }
-
+   
     nav ul {
         gap: 4px;
     }
